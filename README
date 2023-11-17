@@ -1,0 +1,12 @@
+## How to Use
+
+1. standardrb
+	# Running Standard
+	[bundle exec] standardrb <file_path>
+
+	# Fixing errors
+	# CLI
+	$ [bundle exec] standardrb --fix <file_path>
+
+	# Rake
+	$ rake [bundle exec] standard:fix
