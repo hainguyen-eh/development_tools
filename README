@@ -10,3 +10,51 @@
 
 	# Rake
 	$ rake [bundle exec] standard:fix
+
+2. sandi_meter
+	# CLI
+	bundle exec sandi_meter -p <you_project_path>
+	bundle exec sandi_meter -p <you_project_path> -d
+
+	# Ruby script mode
+	require 'sandi_meter/file_scanner'
+	require 'pp'
+
+	scanner = SandiMeter::FileScanner.new
+	data = scanner.scan(<you_project_path>)
+	pp data
+
+3. reek
+	# CLI
+	bundle exec reek <you_project_path>
+
+4. fasterer
+	# CLI
+	bundle exec fasterer <relative_path_only>/EH/heropay-service
+	# bundle exec fasterer <..>/EH/heropay-service
+
+	# how to find relative_path
+
+	~~~ruby
+	require 'pathname'
+	base_path = Pathname.new('/Users/hoasung01/Documents/WorkSpace/development_tools')
+	target_path = Pathname.new('/Users/hoasung01/Documents/WorkSpace/EH/heropay-service/')
+	relative_path = target_path.relative_path_from(base_path)
+	puts relative_path
+	~~~
+
+5. debride
+	# CLI
+	bundle exec debride <you_project_path>
+
+6. flay
+	# CLI
+	bundle exexc flay -v --diff <you_project_path>
+
+7. flog
+	# CLI
+	bundle exexc flog <you_project_path>
+
+8. how to use Makefile
+
+make <fasterer> PROJECT_PATH=/path/to/your_project

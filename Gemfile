@@ -1,3 +1,5 @@
+source 'https://rubygems.org'
+
 group :development, :test do
 =begin
   This gem is built on top of Rubocop but takes it further.
@@ -62,15 +64,53 @@ group :development, :test do
 =end
   # https://github.com/MiniProfiler/rack-mini-profiler
 
-  # gem 'debride'
-  # gem 'flay'
-  # gem 'flog'
-  # gem 'SandiMeter'
+=begin
+  Analyze code for potentially uncalled / dead methods, now with auto-removal.
+=end
+  gem 'debride'
+
+=begin
+  Flay analyzes code for structural similarities.
+  Differences in literal values, variable, class,
+  method names, whitespace, programming style,
+  braces vs do/end, etc are all ignored.
+  Making this totally rad.
+=end
+  gem 'flay'
+
+=begin
+  Flog reports the most tortured code in an easy to read pain report.
+  The higher the score, the more pain the code is in.
+=end
+  gem 'flog'
+
+=begin
+  Static analysis tool for checking your Ruby code for Sandi Metz' four rules.
+  1. 100 lines per class
+  2. 5 lines per method
+  3. 4 params per method call (and don't even try cheating with hash params)
+  4. 1 instance variable per controller action
+=end
+  gem 'sandi_meter'
+  # https://github.com/makaroni4/sandi_meter
+
+  # has been archived by the owner on Mar 16, 2023
   # gem 'ruby-lint'
-  # gem 'fasterer'
+
+=begin
+  Fasterer will suggest some speed improvements
+=end
+  gem 'fasterer'
 
 =begin
   Code smell detector for Ruby
 =end
+  gem 'reek'
   # https://github.com/troessner/reek
+
+  # Other
+=begin
+  A framework for managing and maintaining multi-language pre-commit hooks.
+=end
+  # https://pre-commit.com/
 end
